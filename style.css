@@ -62,3 +62,12 @@ body::after {
 body.light-mode ::-webkit-scrollbar-track { background:#eee; }
 body.light-mode ::-webkit-scrollbar-thumb { background:#ccc; }
 body.light-mode ::-webkit-scrollbar-thumb:hover { background:#aaa; }
+.watermark {
+  font-family: 'Space Mono', monospace;
+  user-select: none;
+  pointer-events: none; /* so it doesn’t block clicks */
+  opacity: 0.4;         /* subtle */
+  font-size: 0.75rem;   /* tiny */
+  color: #888;          /* light gray for subtlety */
+  z-index: 50;          /* stays on top of content */
+}
