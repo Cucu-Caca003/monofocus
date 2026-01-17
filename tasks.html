@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks | MonoFocus</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-black text-white min-h-screen font-mono relative overflow-hidden">
+<div class="container mx-auto px-4 py-12 max-w-2xl">
+        <header class="flex justify-between items-center mb-12">
+            <h1 class="text-3xl font-light">TASKS</h1>
+            <a href="index.html" class="flex items-center text-gray-400 hover:text-white transition">
+                <i data-feather="arrow-left" class="w-5 h-5 mr-2"></i>
+                Back
+            </a>
+        </header>
+
+        <div class="mb-8 flex">
+            <input type="text" id="newTaskInput" placeholder="Add a new task..." class="bg-white text-black px-4 py-3 rounded-l-lg flex-grow focus:outline-none">
+            <button id="addTaskBtn" class="bg-white text-black px-6 py-3 rounded-r-lg flex items-center hover:bg-gray-200 transition">
+                <i data-feather="plus" class="w-5 h-5"></i>
+            </button>
+        </div>
+        <div id="tasksContainer" class="space-y-2 animate-fade-in delay-200">
+<!-- Tasks will be dynamically inserted here -->
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-gray-800 flex justify-between items-center text-gray-500 text-sm">
+            <span id="taskCount">0 tasks</span>
+            <button id="clearCompleted" class="hover:text-white transition">Clear completed</button>
+        </div>
+    </div>
+
+    <script src="components/navbar.js"></script>
+    <custom-navbar></custom-navbar>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

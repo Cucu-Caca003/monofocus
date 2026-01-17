@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes | MonoFocus</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-black text-white min-h-screen font-mono relative overflow-hidden">
+<div class="container mx-auto px-4 py-12 max-w-4xl">
+        <header class="flex justify-between items-center mb-12">
+            <h1 class="text-3xl font-light">NOTES</h1>
+            <a href="index.html" class="flex items-center text-gray-400 hover:text-white transition">
+                <i data-feather="arrow-left" class="w-5 h-5 mr-2"></i>
+                Back
+            </a>
+        </header>
+
+        <div class="mb-8">
+            <button id="newNoteBtn" class="bg-white text-black px-6 py-3 rounded-lg flex items-center hover:bg-gray-200 transition">
+                <i data-feather="plus" class="w-5 h-5 mr-2"></i>
+                New Note
+            </button>
+        </div>
+        <div id="notesContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-in delay-200">
+<!-- Notes will be dynamically inserted here -->
+        </div>
+
+        <!-- Note Editor Modal -->
+        <div id="noteEditor" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center p-4 hidden z-50">
+            <div class="bg-white text-black rounded-lg w-full max-w-2xl p-6 animate-scale-up">
+                <div class="flex justify-between items-center mb-6">
+                    <input type="text" id="noteTitle" placeholder="Note title" class="text-2xl font-medium bg-transparent border-none focus:outline-none w-full">
+                    <button id="closeEditor" class="text-gray-500 hover:text-black">
+                        <i data-feather="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <textarea id="noteContent" placeholder="Start writing..." class="w-full h-64 bg-transparent border-none focus:outline-none resize-none"></textarea>
+                <div class="flex justify-between items-center mt-6">
+                    <button id="deleteNote" class="text-gray-500 hover:text-black flex items-center">
+                        <i data-feather="trash-2" class="w-5 h-5 mr-2"></i>
+                        Delete
+                    </button>
+                    <button id="saveNote" class="bg-black text-white px-6 py-2 rounded-lg flex items-center hover:bg-gray-900 transition">
+                        <i data-feather="save" class="w-5 h-5 mr-2"></i>
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="components/navbar.js"></script>
+    <custom-navbar></custom-navbar>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
