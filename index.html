@@ -1,77 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MonoFocus | Black & White Productivity</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    animation: {
-                        'fade-in': 'fadeIn 0.3s ease-in-out',
-                        'scale-up': 'scaleUp 0.2s ease-out',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        scaleUp: {
-                            '0%': { transform: 'scale(0.95)' },
-                            '100%': { transform: 'scale(1)' },
-                        }
-                    }
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MonoFocus | Black & White Productivity</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease-out forwards',
+            'scale-up': 'scaleUp 0.4s ease-out forwards',
+            'slide-in': 'slideIn 0.5s ease-out forwards',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            scaleUp: { '0%': { transform: 'scale(0.95)', opacity: '0' }, '100%': { transform: 'scale(1)', opacity: '1' } },
+            slideIn: { '0%': { transform: 'translateY(20px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } }
+          }
         }
-    </script>
+      }
+    }
+  </script>
 </head>
-<body class="bg-black text-white min-h-screen font-mono relative overflow-hidden">
-<main class="container mx-auto px-4 py-12 max-w-4xl">
-        <header class="text-center mb-16 animate-fade-in">
-            <h1 class="text-4xl md:text-5xl font-light tracking-tight mb-2">MONOFOCUS</h1>
-            <p class="text-gray-400">Black & white productivity suite</p>
-        </header>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in delay-100">
-<a href="notes.html" class="group">
-                <div class="bg-white text-black p-8 rounded-lg h-full flex flex-col justify-between transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:ring-2 group-hover:ring-white animate-scale-up">
-                    <div>
-                        <i data-feather="edit-3" class="w-12 h-12 mb-6"></i>
-                        <h2 class="text-2xl font-medium mb-2">Notes</h2>
-                        <p class="text-gray-700 group-hover:text-gray-300">Notes down meeting notes and ideas in a distraction-free environment.</p>
-                    </div>
-                    <div class="mt-6 text-sm text-gray-500 group-hover:text-gray-400 flex items-center">
-                        <span>Get started</span>
-                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
-                    </div>
-                </div>
-            </a>
+<body class="bg-black text-white min-h-screen font-mono relative overflow-x-hidden">
 
-            <a href="tasks.html" class="group">
-                <div class="bg-white text-black p-8 rounded-lg h-full flex flex-col justify-between transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:ring-2 group-hover:ring-white animate-scale-up">
-                    <div>
-                        <i data-feather="check-square" class="w-12 h-12 mb-6"></i>
-                        <h2 class="text-2xl font-medium mb-2">Tasks</h2>
-                        <p class="text-gray-700 group-hover:text-gray-300">Manage your to-do list with simple, focused task tracking.</p>
-                    </div>
-                    <div class="mt-6 text-sm text-gray-500 group-hover:text-gray-400 flex items-center">
-                        <span>Get started</span>
-                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
-                    </div>
-                </div>
-            </a>
+  <!-- Main content -->
+  <main class="container mx-auto px-4 sm:px-6 py-8 md:py-12 max-w-4xl">
+    <!-- Header -->
+    <header class="text-center mb-12 md:mb-16 animate-fade-in">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-2">MONOFOCUS</h1>
+      <p class="text-gray-400 text-sm sm:text-base">Black & white productivity suite</p>
+    </header>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 animate-fade-in delay-100">
+      <!-- Notes Card -->
+      <a href="notes.html" class="group">
+        <div class="bg-white text-black p-6 md:p-8 rounded-lg flex flex-col justify-between transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:ring-2 group-hover:ring-white animate-scale-up min-h-[250px]">
+          <div>
+            <i data-feather="edit-3" class="w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6"></i>
+            <h2 class="text-xl md:text-2xl font-medium mb-2">Notes</h2>
+            <p class="text-gray-700 group-hover:text-gray-300 text-sm md:text-base">
+              Notes down meeting notes and ideas in a distraction-free environment.
+            </p>
+          </div>
+          <div class="mt-4 md:mt-6 text-sm text-gray-500 group-hover:text-gray-400 flex items-center">
+            <span>Get started</span>
+            <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+          </div>
         </div>
-    </main>
+      </a>
 
-    <script src="components/navbar.js"></script>
-    <custom-navbar></custom-navbar>
-    <script>
-        feather.replace();
-    </script>
+      <!-- Tasks Card -->
+      <a href="tasks.html" class="group">
+        <div class="bg-white text-black p-6 md:p-8 rounded-lg flex flex-col justify-between transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:ring-2 group-hover:ring-white animate-scale-up min-h-[250px]">
+          <div>
+            <i data-feather="check-square" class="w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6"></i>
+            <h2 class="text-xl md:text-2xl font-medium mb-2">Tasks</h2>
+            <p class="text-gray-700 group-hover:text-gray-300 text-sm md:text-base">
+              Manage your to-do list with simple, focused task tracking.
+            </p>
+          </div>
+          <div class="mt-4 md:mt-6 text-sm text-gray-500 group-hover:text-gray-400 flex items-center">
+            <span>Get started</span>
+            <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+          </div>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <script src="components/navbar.js"></script>
+  <custom-navbar></custom-navbar>
+
+  <script>
+    feather.replace();
+  </script>
 </body>
 </html>
